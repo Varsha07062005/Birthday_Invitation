@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student's Admission Details</title>
+    <script>
+        function validateForm() {
+            const name = document.forms["admissionForm"]["name"].value;
+            const mobile = document.forms["admissionForm"]["mobile"].value;
+            const email = document.forms["admissionForm"]["email"].value;
+            const password = document.forms["admissionForm"]["password"].value;
+            
+            const namePattern = /^[A-Za-z\s]+$/;
+            const mobilePattern = /^[0-9]{10}$/;
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (!name.match(namePattern)) {
+                alert("Please enter a valid name.");
+                return false;
+            }
+            if (!mobile.match(mobilePattern)) {
+                alert("Please enter a valid 10-digit mobile number.");
+                return false;
+            }
+            if (!email.match(emailPattern)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+ <style> 
+ .container {
+            text-align: left;
+border-radius: 10px;
+} 
+</style>
+<body>
+   <h1>Student's Admission Details</h1>
+    <form name="admissionForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="mobile">Mobile Number:</label>
+        <input type="text" id="mobile" name="mobile"><br><br>
+        
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br><br>
+        
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob"><br><br>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+        
+        <label for="hobby">Hobby:</label>
+        <input type="text" id="hobby" name="hobby"><br><br>
+        
+        <label>Hostel Required:</label>
+        <input type="radio" id="yes" name="hostel" value="yes">
+        <label for="yes">Yes</label>
+        <input type="radio" id="no" name="hostel" value="no">
+        <label for="no">No</label><br><br>
+        
+        <input type="checkbox" id="terms" name="terms">
+        <label for="terms">I accept the terms and conditions</label><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
