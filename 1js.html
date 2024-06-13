@@ -1,0 +1,29 @@
+<!DOCTYPE>
+<html>
+<body>
+<h2>javascript</h2>
+<button onclick="myfunction()">Try it</button>
+<button onclick="confimbox()">B.E EEE</button>
+<p id="demo"></p>
+<script>
+function myfuction(){
+var txt;
+if(confirm("press the button")){
+txt="you pressed the button";
+}
+else{
+txt="you pressed the ok button";
+}
+document.getElementById("demo").InnerHTML=txt;
+}
+</script>
+function confirmbox(){
+if (confirmbox("Click or cancel"))
+{
+document.getElementById("demo").InnerHTML="pressed ok";
+;}
+else { document.getElementById("demo").InnerHTML="pressed cancel";
+ ;}
+}
+</script>
+</body> </html>
